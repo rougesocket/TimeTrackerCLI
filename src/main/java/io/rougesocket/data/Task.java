@@ -1,5 +1,6 @@
 package io.rougesocket.data;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 public class Task {
@@ -85,5 +86,9 @@ public class Task {
                 startTime + "," +
                 endTime + "," +
                 status;
+    }
+
+    public Duration getTaskDuration(){
+        return (this.getEndTime()==null)? null:Duration.between(this.startTime,this.endTime);
     }
 }
