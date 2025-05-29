@@ -16,12 +16,16 @@ public class ArgUtil {
             case "start"->Commands.TASK_START;
             case "stop" ->Commands.TASK_STOP;
             case "report"-> args[1].equals("task") ? Commands.REPORT_TASKS:"category".equals(args[1])?Commands.REPORT_CATEGORIES:null;
+            case "export" -> Commands.EXPORT;
             default -> throw new RuntimeException("Unexpected value: " + cmd+"Please refer the manual");
         };
         argsObj.setCommand(command);
         if(Commands.TASK_START.equals(command) || Commands.TASK_STOP.equals(command)){
             argsObj.setTaskName(args[1]);
             argsObj.setCategoryName(args.length==3? args[2]: Category.NONE);
+        }
+        if(Commands.EXPORT.equals(command)){
+            argsObj.setReportPath(args[1]);
         }
         return argsObj;
     }
@@ -31,6 +35,7 @@ public class ArgUtil {
             Logger.log("Error! Not enough Arguments");
             return false;
         }
+
         return true;
     }
 }

@@ -40,6 +40,9 @@ public class TimeTracker {
                     System.out.println("Duration in minutes: "+entry.getValue().toMinutes());
                 }
             }
+            case EXPORT -> {
+                fileUtil.exportToCSV(arguments.getReportPath());
+            }
         };
 
         System.out.println(currentTask);

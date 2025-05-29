@@ -1,21 +1,21 @@
 package io.rougesocket.util;
 
+import io.rougesocket.Logger;
 import io.rougesocket.data.Category;
 import io.rougesocket.data.CurrentTask;
 import io.rougesocket.data.Task;
 import io.rougesocket.data.TaskStatus;
 
 import java.io.IOException;
-import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class FileUtil {
 
@@ -46,4 +46,16 @@ public class FileUtil {
 
         Files.write(path,data);
     }
+
+    public void exportToCSV(String path) throws IOException {
+        try{
+            Path src = Paths.get(PATH);
+            Path des = Paths.get(path);
+            Files.copy(src,des,StandardCopyOption.REPLACE_EXISTING);
+            Logger.log("Report is available at: "+path);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

@@ -4,5 +4,6 @@ public enum Commands {
     TASK_START,
     TASK_STOP,
     REPORT_TASKS,
-    REPORT_CATEGORIES
+    REPORT_CATEGORIES,
+    EXPORT
 }

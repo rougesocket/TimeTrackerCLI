@@ -17,3 +17,8 @@ shows the tasks and time spent on each task
 
 `timetracker report category`
 shows the categories and time spend on each category
+
+### Export Report
+`timetracker export <path-to-file>`
+
+Note: Throws a Runtime exception if file path is not valid

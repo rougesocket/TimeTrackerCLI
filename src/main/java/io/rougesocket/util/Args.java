@@ -4,6 +4,15 @@ public class Args {
     private Commands command;
     private String taskName;
     private String categoryName;
+    private String reportPath;
+
+    public String getReportPath() {
+        return reportPath;
+    }
+
+    public void setReportPath(String reportPath) {
+        this.reportPath = reportPath;
+    }
 
     public Commands getCommand() {
         return command;
