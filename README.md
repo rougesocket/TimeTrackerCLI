@@ -13,6 +13,12 @@
 - 💾 Persistent storage using CSV — no database required
 
 ---
+## 🔧 Application Architecture
+
+![App Architecture](images/arch.png)
+
+
+---
 
 ## 📦 Installation
 
@@ -84,9 +90,5 @@ TimeTrackerCLI uses a simple CSV file as its storage backend. Each log entry is 
 - Duration (calculated)
 
 The file is read and written automatically by the application — no external database or configuration needed.
-## 🔧 Application Architecture
-
-![App Architecture](images/arch.png)
-
 
 ---
